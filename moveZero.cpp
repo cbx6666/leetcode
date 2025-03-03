@@ -1,15 +1,15 @@
-/*ÒÆ¶¯Áã*/
-//¸ø¶¨Ò»¸öÊý×é nums£¬±àÐ´Ò»¸öº¯Êý½«ËùÓÐ 0 ÒÆ¶¯µ½Êý×éµÄÄ©Î²£¬Í¬Ê±±£³Ö·ÇÁãÔªËØµÄÏà¶ÔË³Ðò¡£
-//Çë×¢Òâ £¬±ØÐëÔÚ²»¸´ÖÆÊý×éµÄÇé¿öÏÂÔ­µØ¶ÔÊý×é½øÐÐ²Ù×÷¡£
-//Ê¾Àý 1:
-//ÊäÈë: nums = [0, 1, 0, 3, 12]
-//Êä³ö : [1, 3, 12, 0, 0]
-//Ê¾Àý 2 :
-//ÊäÈë : nums = [0]
-//Êä³ö : [0]
+/*ç§»åŠ¨é›¶*/
+//ç»™å®šä¸€ä¸ªæ•°ç»„ numsï¼Œç¼–å†™ä¸€ä¸ªå‡½æ•°å°†æ‰€æœ‰ 0 ç§»åŠ¨åˆ°æ•°ç»„çš„æœ«å°¾ï¼ŒåŒæ—¶ä¿æŒéžé›¶å…ƒç´ çš„ç›¸å¯¹é¡ºåºã€‚
+//è¯·æ³¨æ„ ï¼Œå¿…é¡»åœ¨ä¸å¤åˆ¶æ•°ç»„çš„æƒ…å†µä¸‹åŽŸåœ°å¯¹æ•°ç»„è¿›è¡Œæ“ä½œã€‚
+//ç¤ºä¾‹ 1:
+//è¾“å…¥: nums = [0, 1, 0, 3, 12]
+//è¾“å‡º : [1, 3, 12, 0, 0]
+//ç¤ºä¾‹ 2 :
+//è¾“å…¥ : nums = [0]
+//è¾“å‡º : [0]
 class Solution {
 public:
-    // µÚÒ»´ÎÌá½»£¬Ê¹ÓÃ¹þÏ£±í£¬¸´ÔÓ¶ÈºÜ¸ß...
+    // ç¬¬ä¸€æ¬¡æäº¤ï¼Œä½¿ç”¨å“ˆå¸Œè¡¨ï¼Œå¤æ‚åº¦å¾ˆé«˜...
     /*void moveZeroes(vector<int>& nums) {
         unordered_map<int, int> rank;
         int index = 0;
@@ -20,6 +20,7 @@ public:
             }
         }
         int amountOfZero = nums.size() - index;
+        
         for (int i = 0; i < index; i++) {
             nums[i] = rank[i];
         }
