@@ -1,16 +1,16 @@
-/*ÈıÊıÖ®ºÍ*/
-//¸øÄãÒ»¸öÕûÊıÊı×é nums £¬ÅĞ¶ÏÊÇ·ñ´æÔÚÈıÔª×é [nums[i], nums[j], nums[k]] Âú×ã i != j¡¢i != k ÇÒ j != k £¬
-//Í¬Ê±»¹Âú×ã nums[i] + nums[j] + nums[k] == 0 ¡£ÇëÄã·µ»ØËùÓĞºÍÎª 0 ÇÒ²»ÖØ¸´µÄÈıÔª×é¡£
-//×¢Òâ£º´ğ°¸ÖĞ²»¿ÉÒÔ°üº¬ÖØ¸´µÄÈıÔª×é
+/*ä¸‰æ•°ä¹‹å’Œ*/
+//ç»™ä½ ä¸€ä¸ªæ•´æ•°æ•°ç»„ nums ï¼Œåˆ¤æ–­æ˜¯å¦å­˜åœ¨ä¸‰å…ƒç»„ [nums[i], nums[j], nums[k]] æ»¡è¶³ i != jã€i != k ä¸” j != k ï¼Œ
+//åŒæ—¶è¿˜æ»¡è¶³ nums[i] + nums[j] + nums[k] == 0 ã€‚è¯·ä½ è¿”å›æ‰€æœ‰å’Œä¸º 0 ä¸”ä¸é‡å¤çš„ä¸‰å…ƒç»„ã€‚
+//æ³¨æ„ï¼šç­”æ¡ˆä¸­ä¸å¯ä»¥åŒ…å«é‡å¤çš„ä¸‰å…ƒç»„
 class Solution {
 public:
-    // ¸´ÔÓ¶È·Ç³£¸ßµÄ·½·¨...
+    // å¤æ‚åº¦éå¸¸é«˜çš„æ–¹æ³•...
     /*vector<vector<int>> threeSum(vector<int>& nums) {
         vector < vector<int>> answer;
         sort(nums.begin(), nums.end());
         for (int i = 0; i < nums.size() - 2; i++) {
 
-            if (i > 0 && nums[i] == nums[i - 1]) { // È¥ÖØ
+            if (i > 0 && nums[i] == nums[i - 1]) { // å»é‡
                 continue;
             }
 
@@ -21,7 +21,7 @@ public:
                 if (uset.find(complement) != uset.end()) {
                     answer.push_back({ nums[i],nums[j],complement });
 
-                    while (j + 1 < nums.size() && nums[j] == nums[j + 1]) { // È¥ÖØ
+                    while (j + 1 < nums.size() && nums[j] == nums[j + 1]) { // å»é‡
                         j++;
                     }
                 }
@@ -36,6 +36,7 @@ public:
         sort(nums.begin(), nums.end());
 
         int n = nums.size();
+        
         if (n < 3) return answer;
 
         for (int i = 0; i < n - 2; i++) {
