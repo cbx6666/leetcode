@@ -1,4 +1,3 @@
-/*Ñî»ÔÈı½Ç*/
 class Solution {
 public:
     vector<vector<int>> generate(int numRows) {

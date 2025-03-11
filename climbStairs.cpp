@@ -1,6 +1,6 @@
-/*ÅÀÂ¥ÌÝ*/
-//¼ÙÉèÄãÕýÔÚÅÀÂ¥ÌÝ¡£ÐèÒª n ½×Äã²ÅÄÜµ½´ïÂ¥¶¥¡£
-//Ã¿´ÎÄã¿ÉÒÔÅÀ 1 »ò 2 ¸öÌ¨½×¡£ÄãÓÐ¶àÉÙÖÖ²»Í¬µÄ·½·¨¿ÉÒÔÅÀµ½Â¥¶¥ÄØ£¿
+/*çˆ¬æ¥¼æ¢¯*/
+//å‡è®¾ä½ æ­£åœ¨çˆ¬æ¥¼æ¢¯ã€‚éœ€è¦ n é˜¶ä½ æ‰èƒ½åˆ°è¾¾æ¥¼é¡¶ã€‚
+//æ¯æ¬¡ä½ å¯ä»¥çˆ¬ 1 æˆ– 2 ä¸ªå°é˜¶ã€‚ä½ æœ‰å¤šå°‘ç§ä¸åŒçš„æ–¹æ³•å¯ä»¥çˆ¬åˆ°æ¥¼é¡¶å‘¢ï¼Ÿ
 class Solution {
 public:
     int climbStairs(int n) {
@@ -10,6 +10,7 @@ public:
         if (n == 2) {
             return 2;
         }
+        
         int a = 1, b = 2, temp = 0;
         for (int i = 3; i <= n; i++) {
             temp = a + b;
