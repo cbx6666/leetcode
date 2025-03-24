@@ -1,8 +1,8 @@
-/*½ÓÓêË®*/
-//¸ø¶¨ n ¸ö·Ç¸ºÕûÊı±íÊ¾Ã¿¸ö¿í¶ÈÎª 1 µÄÖù×ÓµÄ¸ß¶ÈÍ¼£¬¼ÆËã°´´ËÅÅÁĞµÄÖù×Ó£¬ÏÂÓêÖ®ºóÄÜ½Ó¶àÉÙÓêË®¡£
+/*æ¥é›¨æ°´*/
+//ç»™å®š n ä¸ªéè´Ÿæ•´æ•°è¡¨ç¤ºæ¯ä¸ªå®½åº¦ä¸º 1 çš„æŸ±å­çš„é«˜åº¦å›¾ï¼Œè®¡ç®—æŒ‰æ­¤æ’åˆ—çš„æŸ±å­ï¼Œä¸‹é›¨ä¹‹åèƒ½æ¥å¤šå°‘é›¨æ°´ã€‚
 class Solution {
 public:
-    // Ê±¼ä¸´ÔÓ¶ÈÎªO(n2),ÎŞ·¨Í¨¹ı²âÊÔ
+    // æ—¶é—´å¤æ‚åº¦ä¸ºO(n2),æ— æ³•é€šè¿‡æµ‹è¯•
     /*int trap(vector<int>& height) {
         int maxHeight = 0, n = height.size();
         int volume = 0;
@@ -28,22 +28,22 @@ public:
         return volume;
     }*/
 
-    // Ê¹ÓÃË«Ö¸Õë·¨
+    // ä½¿ç”¨åŒæŒ‡é’ˆæ³•
     /*int trap(vector<int>& height) {
         int n = height.size();
         if (n == 0)
             return 0;
 
-        int left = 0, right = n - 1;                          // Ë«Ö¸Õë
-        int leftMax = height[left], rightMax = height[right]; // ×óÓÒ×î´óÖµ
+        int left = 0, right = n - 1;                          // åŒæŒ‡é’ˆ
+        int leftMax = height[left], rightMax = height[right]; // å·¦å³æœ€å¤§å€¼
         int volume = 0;
 
         while (left < right) {
-            // ¸üĞÂ×óÓÒ×î´óÖµ
+            // æ›´æ–°å·¦å³æœ€å¤§å€¼
             leftMax = max(leftMax, height[left]);
             rightMax = max(rightMax, height[right]);
 
-            // ½ÏĞ¡µÄÒ»²à¾ö¶¨ÓêË®Á¿
+            // è¾ƒå°çš„ä¸€ä¾§å†³å®šé›¨æ°´é‡
             if (leftMax < rightMax) {
                 volume += leftMax - height[left];
                 left++;
@@ -56,29 +56,30 @@ public:
         return volume;
     }*/
 
-    // Ê¹ÓÃµ¥µ÷Õ»µÄ½â·¨
+    // ä½¿ç”¨å•è°ƒæ ˆçš„è§£æ³•
     int trap(vector<int>& height) {
         int ans = 0;
         stack<int> stk;
         int n = height.size();
         for (int i = 0; i < n; ++i) {
-            while (!stk.empty() && height[i] > height[stk.top()]) { // µ¥µ÷Õ»£¬´ÓÕ»µ×µ½Õ»¶¥µİ¼õ£¬Ö±µ½height[i]¸ßÓÚÕ»¶¥ÔªËØ£¬height[i]×÷ÎªÓÒ±ß½ç
-                int top = stk.top(); // ¼ÇÂ¼×îµÍµã
-                stk.pop(); // µ¯³öÕ»¶¥ÔªËØ
+            while (!stk.empty() && height[i] > height[stk.top()]) { // å•è°ƒæ ˆï¼Œä»æ ˆåº•åˆ°æ ˆé¡¶é€’å‡ï¼Œç›´åˆ°height[i]é«˜äºæ ˆé¡¶å…ƒç´ ï¼Œheight[i]ä½œä¸ºå³è¾¹ç•Œ
+                int top = stk.top(); // è®°å½•æœ€ä½ç‚¹
+                stk.pop(); // å¼¹å‡ºæ ˆé¡¶å…ƒç´ 
                 
                 if (stk.empty()) {
                     break;
                 }
 
-                int left = stk.top(); // È¡¸ßÓÚ×îµÍµãµÄĞÂÕ»¶¥ÔªËØ×÷ÎªÓÒ±ß½ç
+                int left = stk.top(); // å–é«˜äºæœ€ä½ç‚¹çš„æ–°æ ˆé¡¶å…ƒç´ ä½œä¸ºå³è¾¹ç•Œ
 
-                // ¼ÆËãÓêË®Á¿
+                // è®¡ç®—é›¨æ°´é‡
                 int currentWidth = i - left - 1;
                 int currentHeight = min(height[left], height[i]) - height[top];
                 ans += currentHeight * currentWidth;
             }
             stk.push(i);
         }
+        
         return ans;
     }
 };
