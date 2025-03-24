@@ -1,5 +1,5 @@
 /*数组中第K个最大元素*/
-//返回数组中第K大的元素
+//返回数组中第K大的元素，你必须设计并实现时间复杂度为 O(n) 的算法解决此问题。
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
