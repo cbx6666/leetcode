@@ -1,5 +1,5 @@
-/*·Ö¸îµÈºÍ×Ó¼¯*/
-//¸øÄãÒ»¸ö Ö»°üº¬ÕýÕûÊý µÄ ·Ç¿Õ Êý×é nums ¡£ÇëÄãÅÐ¶ÏÊÇ·ñ¿ÉÒÔ½«Õâ¸öÊý×é·Ö¸î³ÉÁ½¸ö×Ó¼¯£¬Ê¹µÃÁ½¸ö×Ó¼¯µÄÔªËØºÍÏàµÈ¡£
+/*åˆ†å‰²ç­‰å’Œå­é›†*/
+//ç»™ä½ ä¸€ä¸ª åªåŒ…å«æ­£æ•´æ•° çš„ éžç©º æ•°ç»„ nums ã€‚è¯·ä½ åˆ¤æ–­æ˜¯å¦å¯ä»¥å°†è¿™ä¸ªæ•°ç»„åˆ†å‰²æˆä¸¤ä¸ªå­é›†ï¼Œä½¿å¾—ä¸¤ä¸ªå­é›†çš„å…ƒç´ å’Œç›¸ç­‰ã€‚
 class Solution {
 public:
     bool canPartition(vector<int>& nums) {
