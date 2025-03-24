@@ -7,7 +7,7 @@ public:
         int n = s.size(), m = p.size();
  
         if (n < m) {
-            return answer;  
+            return answer; 
         }
 
         vector<int> pCount(26, 0);
