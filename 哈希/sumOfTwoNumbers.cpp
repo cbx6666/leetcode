@@ -1,7 +1,7 @@
-/*Á½ÊýÖ®ºÍ*/
-//¸ø¶¨Ò»¸öÕûÊýÊý×é nums ºÍÒ»¸öÕûÊýÄ¿±êÖµ target£¬ÇëÄãÔÚ¸ÃÊý×éÖÐÕÒ³ö ºÍÎªÄ¿±êÖµ target  µÄÄÇ Á½¸ö ÕûÊý£¬²¢·µ»ØËüÃÇµÄÊý×éÏÂ±ê¡£
-//Äã¿ÉÒÔ¼ÙÉèÃ¿ÖÖÊäÈëÖ»»á¶ÔÓ¦Ò»¸ö´ð°¸£¬²¢ÇÒÄã²»ÄÜÊ¹ÓÃÁ½´ÎÏàÍ¬µÄÔªËØ¡£
-//Äã¿ÉÒÔ°´ÈÎÒâË³Ðò·µ»Ø´ð°¸¡£
+/*ä¸¤æ•°ä¹‹å’Œ*/
+//ç»™å®šä¸€ä¸ªæ•´æ•°æ•°ç»„ nums å’Œä¸€ä¸ªæ•´æ•°ç›®æ ‡å€¼ targetï¼Œè¯·ä½ åœ¨è¯¥æ•°ç»„ä¸­æ‰¾å‡º å’Œä¸ºç›®æ ‡å€¼ target  çš„é‚£ ä¸¤ä¸ª æ•´æ•°ï¼Œå¹¶è¿”å›žå®ƒä»¬çš„æ•°ç»„ä¸‹æ ‡ã€‚
+//ä½ å¯ä»¥å‡è®¾æ¯ç§è¾“å…¥åªä¼šå¯¹åº”ä¸€ä¸ªç­”æ¡ˆï¼Œå¹¶ä¸”ä½ ä¸èƒ½ä½¿ç”¨ä¸¤æ¬¡ç›¸åŒçš„å…ƒç´ ã€‚
+//ä½ å¯ä»¥æŒ‰ä»»æ„é¡ºåºè¿”å›žç­”æ¡ˆã€‚
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -13,6 +13,7 @@ public:
             }
             numMap[nums[i]] = i;
         }
+        
         return {};
     }
 };
