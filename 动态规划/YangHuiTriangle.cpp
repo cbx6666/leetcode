@@ -11,6 +11,7 @@ public:
                 index++;
             }
         }
+        
         return triangle;
     }
 };
