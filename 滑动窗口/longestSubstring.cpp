@@ -1,8 +1,8 @@
-/*���ظ��ַ�����ִ�*/
-// ����һ���ַ��� s �������ҳ����в������ظ��ַ�����Ӵ��ĳ��ȡ�
+/*无重复字符的最长字串*/
+// 给定一个字符串 s ，请你找出其中不含有重复字符的最长子串的长度。
 class solution {
 public:
-    // ˫ָ��+��ϣ���������ظ�Ԫ�غ󣬴�ǰһ���ظ�Ԫ�ص���һ��Ԫ�ؿ�ʼ��������ֵ��ظ�Ԫ��
+    // 双指针+哈希表，出现重复元素后，从前一个重复元素的下一个元素开始，到后出现的重复元素
     int lengthOfLongestSubstring(string s) {
         int max = 0, currentLength = 0;
         unordered_map<char, int> umap;
