@@ -1,6 +1,6 @@
-/*��ĸ��λ�ʷ���*/
-//����һ���ַ������飬���㽫 ��ĸ��λ�� �����һ�𡣿��԰�����˳�򷵻ؽ���б���
-//��ĸ��λ�� ������������Դ���ʵ�������ĸ�õ���һ���µ��ʡ�
+/*字母异位词分组*/
+//给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。
+//字母异位词 是由重新排列源单词的所有字母得到的一个新单词。
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
@@ -14,6 +14,7 @@ public:
         for (const auto& pair : umap) {
             answer.push_back(pair.second);
         }
+        
         return answer;
     }
 };
