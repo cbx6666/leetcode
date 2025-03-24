@@ -1,14 +1,14 @@
-/*³ı×ÔÉíÒÔÍâÊı×éµÄ³Ë»ı*/
-//¸øÄãÒ»¸öÕûÊıÊı×é nums£¬·µ»ØÊı×é answer £¬ÆäÖĞ answer[i] µÈÓÚ nums ÖĞ³ı nums[i] Ö®ÍâÆäÓà¸÷ÔªËØµÄ³Ë»ı ¡£
-//ÌâÄ¿Êı¾İ ±£Ö¤Êı×é numsÖ®ÖĞÈÎÒâÔªËØµÄÈ«²¿Ç°×ºÔªËØºÍºó×ºµÄ³Ë»ı¶¼ÔÚ32Î»ÕûÊı·¶Î§ÄÚ¡£
-//Çë²»ÒªÊ¹ÓÃ³ı·¨£¬ÇÒÔÚ O(n) Ê±¼ä¸´ÔÓ¶ÈÄÚÍê³É´ËÌâ¡£
+/*é™¤è‡ªèº«ä»¥å¤–æ•°ç»„çš„ä¹˜ç§¯*/
+//ç»™ä½ ä¸€ä¸ªæ•´æ•°æ•°ç»„ numsï¼Œè¿”å›æ•°ç»„ answer ï¼Œå…¶ä¸­ answer[i] ç­‰äº nums ä¸­é™¤ nums[i] ä¹‹å¤–å…¶ä½™å„å…ƒç´ çš„ä¹˜ç§¯ ã€‚
+//é¢˜ç›®æ•°æ® ä¿è¯æ•°ç»„ numsä¹‹ä¸­ä»»æ„å…ƒç´ çš„å…¨éƒ¨å‰ç¼€å…ƒç´ å’Œåç¼€çš„ä¹˜ç§¯éƒ½åœ¨32ä½æ•´æ•°èŒƒå›´å†…ã€‚
+//è¯·ä¸è¦ä½¿ç”¨é™¤æ³•ï¼Œä¸”åœ¨ O(n) æ—¶é—´å¤æ‚åº¦å†…å®Œæˆæ­¤é¢˜ã€‚
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
-        int n = nums.size();// ¼ÙÉèÊı×éÎªa b c d
-        vector<int> prefix(n);// Ç°×º»ı 1   a   ab  abc
-        vector<int> suffix(n);// ºó×º»ı bcd cd  d   1
-        vector<int> answer(n);// Ç°×º»ı*ºó×º»ı
+        int n = nums.size();// å‡è®¾æ•°ç»„ä¸ºa b c d
+        vector<int> prefix(n);// å‰ç¼€ç§¯ 1   a   ab  abc
+        vector<int> suffix(n);// åç¼€ç§¯ bcd cd  d   1
+        vector<int> answer(n);// å‰ç¼€ç§¯*åç¼€ç§¯
         prefix[0] = 1, suffix[n - 1] = 1;
         for (int i = 1; i < n; i++) {
             prefix[i] = prefix[i - 1] * nums[i - 1];
