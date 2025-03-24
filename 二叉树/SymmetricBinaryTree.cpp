@@ -1,5 +1,5 @@
-/*¶Ô³Æ¶ş²æÊ÷*/
-//¸øÄãÒ»¸ö¶ş²æÊ÷µÄ¸ù½Úµã root £¬ ¼ì²éËüÊÇ·ñÖá¶Ô³Æ¡£
+/*å¯¹ç§°äºŒå‰æ ‘*/
+//ç»™ä½ ä¸€ä¸ªäºŒå‰æ ‘çš„æ ¹èŠ‚ç‚¹ root ï¼Œ æ£€æŸ¥å®ƒæ˜¯å¦è½´å¯¹ç§°ã€‚
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -49,6 +49,7 @@ public:
         if (!compareTree(root1->right, root2->right)) {
             return false;
         }
+        
         return true;
     }
 };
