@@ -30,6 +30,7 @@ public:
             maxLength = maxLength > left + right ? maxLength : left + right;
             return max(left, right);
         }
+        
         return 0;
     }
 };
