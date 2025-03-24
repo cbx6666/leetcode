@@ -5,7 +5,7 @@ public:
     // 使用双端队列，空间复杂度较高
     /*void rotate(vector<int>& nums, int k) {
         int n = nums.size();
-        deque<int> dq;
+        deque<int> dq; 
         for (int i = 0; i < n; i++) {
             dq.push_back(nums[i]);
         }
