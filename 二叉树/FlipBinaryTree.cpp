@@ -1,5 +1,5 @@
-/*·­×ª¶þ²æÊ÷*/
-//¸øÄãÒ»¿Ã¶þ²æÊ÷µÄ¸ù½Úµã root £¬·­×ªÕâ¿Ã¶þ²æÊ÷£¬²¢·µ»ØÆä¸ù½Úµã¡£
+/*ç¿»è½¬äºŒå‰æ ‘*/
+//ç»™ä½ ä¸€æ£µäºŒå‰æ ‘çš„æ ¹èŠ‚ç‚¹ root ï¼Œç¿»è½¬è¿™æ£µäºŒå‰æ ‘ï¼Œå¹¶è¿”å›žå…¶æ ¹èŠ‚ç‚¹ã€‚
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -23,6 +23,7 @@ public:
             root->right = temp;
             invertTree(root->left);
         }
+        
         return root;
     }
 };
