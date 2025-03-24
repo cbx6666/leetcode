@@ -1,5 +1,5 @@
-/*³Ë»ý×î´ó×ÓÊý×é*/
-//¸øÄãÒ»¸öÕûÊýÊý×é nums £¬ÇëÄãÕÒ³öÊý×éÖÐ³Ë»ý×î´óµÄ·Ç¿ÕÁ¬Ðø ×ÓÊý×é£¨¸Ã×ÓÊý×éÖÐÖÁÉÙ°üº¬Ò»¸öÊý×Ö£©£¬²¢·µ»Ø¸Ã×ÓÊý×éËù¶ÔÓ¦µÄ³Ë»ý¡£
+/*ä¹˜ç§¯æœ€å¤§å­æ•°ç»„*/
+//ç»™ä½ ä¸€ä¸ªæ•´æ•°æ•°ç»„ nums ï¼Œè¯·ä½ æ‰¾å‡ºæ•°ç»„ä¸­ä¹˜ç§¯æœ€å¤§çš„éžç©ºè¿žç»­ å­æ•°ç»„ï¼ˆè¯¥å­æ•°ç»„ä¸­è‡³å°‘åŒ…å«ä¸€ä¸ªæ•°å­—ï¼‰ï¼Œå¹¶è¿”å›žè¯¥å­æ•°ç»„æ‰€å¯¹åº”çš„ä¹˜ç§¯ã€‚
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
@@ -19,6 +19,7 @@ public:
             }
             maxValue = max(maxValue, maxDp[i]);
         }
+        
         return maxValue;
     }
 };
