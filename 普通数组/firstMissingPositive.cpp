@@ -1,10 +1,10 @@
-/*È±Ê§µÄµÚÒ»¸öÕýÊý*/
-//¸øÄãÒ»¸öÎ´ÅÅÐòµÄÕûÊýÊý×é nums £¬ÇëÄãÕÒ³öÆäÖÐÃ»ÓÐ³öÏÖµÄ×îÐ¡µÄÕýÕûÊý¡£
-//ÇëÄãÊµÏÖÊ±¼ä¸´ÔÓ¶ÈÎª O(n) ²¢ÇÒÖ»Ê¹ÓÃ³£Êý¼¶±ð¶îÍâ¿Õ¼äµÄ½â¾ö·½°¸¡£
+/*ç¼ºå¤±çš„ç¬¬ä¸€ä¸ªæ­£æ•°*/
+//ç»™ä½ ä¸€ä¸ªæœªæŽ’åºçš„æ•´æ•°æ•°ç»„ nums ï¼Œè¯·ä½ æ‰¾å‡ºå…¶ä¸­æ²¡æœ‰å‡ºçŽ°çš„æœ€å°çš„æ­£æ•´æ•°ã€‚
+//è¯·ä½ å®žçŽ°æ—¶é—´å¤æ‚åº¦ä¸º O(n) å¹¶ä¸”åªä½¿ç”¨å¸¸æ•°çº§åˆ«é¢å¤–ç©ºé—´çš„è§£å†³æ–¹æ¡ˆã€‚
 class Solution {
 public:
-    // Êµ¼ÊÉÏ£¬¶ÔÓÚÒ»¸ö³¤¶ÈÎª N µÄÊý×é£¬ÆäÖÐÃ»ÓÐ³öÏÖµÄ×îÐ¡ÕýÕûÊýÖ»ÄÜÔÚ[1, N + 1] ÖÐ¡£ÕâÊÇÒòÎªÈç¹û[1, N] ¶¼³öÏÖÁË£¬ÄÇÃ´´ð°¸ÊÇ N + 1£¬·ñÔò´ð°¸ÊÇ[1, N] ÖÐÃ»ÓÐ³öÏÖµÄ×îÐ¡ÕýÕûÊý¡£
-    // µÚÒ»ÖÖ·½·¨£¬ÖÃ»»£¬½«[1,N]ÖÐ³öÏÖµÄÊý×Öi£¬·ÅÔÚÊý×éÏÂ±ê[i-1]´¦
+    // å®žé™…ä¸Šï¼Œå¯¹äºŽä¸€ä¸ªé•¿åº¦ä¸º N çš„æ•°ç»„ï¼Œå…¶ä¸­æ²¡æœ‰å‡ºçŽ°çš„æœ€å°æ­£æ•´æ•°åªèƒ½åœ¨[1, N + 1] ä¸­ã€‚è¿™æ˜¯å› ä¸ºå¦‚æžœ[1, N] éƒ½å‡ºçŽ°äº†ï¼Œé‚£ä¹ˆç­”æ¡ˆæ˜¯ N + 1ï¼Œå¦åˆ™ç­”æ¡ˆæ˜¯[1, N] ä¸­æ²¡æœ‰å‡ºçŽ°çš„æœ€å°æ­£æ•´æ•°ã€‚
+    // ç¬¬ä¸€ç§æ–¹æ³•ï¼Œç½®æ¢ï¼Œå°†[1,N]ä¸­å‡ºçŽ°çš„æ•°å­—iï¼Œæ”¾åœ¨æ•°ç»„ä¸‹æ ‡[i-1]å¤„
     int firstMissingPositive(vector<int>& nums) {
         int n = nums.size();
         for (int i = 0; i < n; i++) {
@@ -22,9 +22,9 @@ public:
         return n + 1;
     }
 
-    // µÚ¶þÖÖ·½·¨£¬¹þÏ£±í
-    // ÎÒÃÇ½«Êý×éÖÐËùÓÐÐ¡ÓÚµÈÓÚ 0 µÄÊýÐÞ¸ÄÎª N+1£»
-    // ½«<= NµÄÔªËØÈ¡Ïà·´Êý
+    // ç¬¬äºŒç§æ–¹æ³•ï¼Œå“ˆå¸Œè¡¨
+    // æˆ‘ä»¬å°†æ•°ç»„ä¸­æ‰€æœ‰å°äºŽç­‰äºŽ 0 çš„æ•°ä¿®æ”¹ä¸º N+1ï¼›
+    // å°†<= Nçš„å…ƒç´ å–ç›¸åæ•°
     /*int firstMissingPositive(vector<int>& nums) {
         int n = nums.size();
         for (int i = 0; i < n; i++) {
@@ -34,7 +34,7 @@ public:
         }
 
         for (int i = 0; i < n; i++) {
-            if (abs(nums[i]) < n + 1 && nums[abs(nums[i]) - 1] > 0) {
+            if (abs(nums[i]) < n + 1 && nums[abs(nums[i]) - 1] > 0) { // ä¸è¦é‡å¤æ·»åŠ è´Ÿå·
                 nums[abs(nums[i]) - 1] *= -1;
             }
         }
