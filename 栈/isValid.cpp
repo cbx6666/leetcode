@@ -1,4 +1,4 @@
-/*ÓĞĞ§µÄÀ¨ºÅ*/
+/*æœ‰æ•ˆçš„æ‹¬å·*/
 class Solution {
 public:
     bool isValid(string s) {
