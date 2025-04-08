@@ -16,13 +16,13 @@ public:
             for (int i = colEnd; i >= colStart && rowStart < rowEnd; i--) {
                 answer.push_back(matrix[rowEnd][i]);
             }
-            for (int i = rowEnd - 1; i >= rowStart + 1 && colStart < colEnd;
-                i--) {
+            for (int i = rowEnd - 1; i >= rowStart + 1 && colStart < colEnd; i--) {
                 answer.push_back(matrix[i][colStart]);
             }
 
             rowStart++, rowEnd--, colStart++, colEnd--;
         }
+        
         return answer;
     }
 };
