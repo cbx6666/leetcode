@@ -22,6 +22,7 @@ public:
             sum->next = new ListNode(value);
             sum = sum->next;
         }
+        // 处理尾部空节点
         return head->next;
     }
 };
