@@ -1,7 +1,7 @@
-/*¶ş²æÊ÷µÄÓÒÊÓÍ¼*/
+/*äºŒå‰æ ‘çš„å³è§†å›¾*/
 class Solution {
 public:
-    vector<int> rightSideView(TreeNode* root) { // Ê¹ÓÃ¶ş²æÊ÷µÄ²ãĞò±éÀú£¬¼ÇÂ¼Ã¿²ã×îºóÒ»¸öÖµ
+    vector<int> rightSideView(TreeNode* root) { // ä½¿ç”¨å±‚åºéå†è®°å½•æ¯å±‚æœ€åä¸€ä¸ªå€¼
         queue<TreeNode*> q;
         q.push(root);
         vector<int> answer;

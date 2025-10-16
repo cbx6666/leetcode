@@ -1,5 +1,5 @@
-/*��Сջ*/
-//���һ��֧�� push ��pop ��top �����������ڳ���ʱ���ڼ�������СԪ�ص�ջ��
+/*最小栈*/
+//设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
 class MinStack {
 public:
     stack<int> st;

@@ -1,0 +1,21 @@
+BasedOnStyle: LLVM
+# Use 4 spaces, no tabs
+IndentWidth: 4
+UseTab: Never
+
+# Keep access modifiers (public/protected/private) aligned with class, not indented
+IndentAccessModifiers: false
+AccessModifierOffset: -2
+
+# Attach braces to declarations/definitions and avoid extra wrapping
+BreakBeforeBraces: Attach
+BraceWrapping:
+  AfterClass: false
+  AfterStruct: false
+  AfterFunction: false
+  BeforeElse: false
+  BeforeCatch: false
+
+# Keep lines as-is unless necessary
+ColumnLimit: 0
+

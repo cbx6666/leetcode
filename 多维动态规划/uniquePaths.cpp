@@ -1,10 +1,10 @@
-/*²»Í¬Â·¾¶*/
-//Ò»¸ö»úÆ÷ÈËÎ»ÓÚÒ»¸ö m x n Íø¸ñµÄ×óÉÏ½Ç £¨ÆðÊ¼µãÔÚÏÂÍ¼ÖÐ±ê¼ÇÎª ¡°Start¡± £©¡£
-//»úÆ÷ÈËÃ¿´ÎÖ»ÄÜÏòÏÂ»òÕßÏòÓÒÒÆ¶¯Ò»²½¡£»úÆ÷ÈËÊÔÍ¼´ïµ½Íø¸ñµÄÓÒÏÂ½Ç£¨ÔÚÏÂÍ¼ÖÐ±ê¼ÇÎª ¡°Finish¡± £©¡£
-//ÎÊ×Ü¹²ÓÐ¶àÉÙÌõ²»Í¬µÄÂ·¾¶
+/*ä¸åŒè·¯å¾„*/
+//ä¸€ä¸ªæœºå™¨äººä½äºŽä¸€ä¸ª m x n ç½‘æ ¼çš„å·¦ä¸Šè§’ ï¼ˆèµ·å§‹ç‚¹åœ¨ä¸‹å›¾ä¸­æ ‡è®°ä¸º â€œStartâ€ ï¼‰ã€‚
+//æœºå™¨äººæ¯æ¬¡åªèƒ½å‘ä¸‹æˆ–è€…å‘å³ç§»åŠ¨ä¸€æ­¥ã€‚æœºå™¨äººè¯•å›¾è¾¾åˆ°ç½‘æ ¼çš„å³ä¸‹è§’ï¼ˆåœ¨ä¸‹å›¾ä¸­æ ‡è®°ä¸º â€œFinishâ€ ï¼‰ã€‚
+//é—®æ€»å…±æœ‰å¤šå°‘æ¡ä¸åŒçš„è·¯å¾„
 class Solution {
 public:
-    // ¹ö¶¯Êý×é + ¶¯Ì¬¹æ»®
+    // æ»šåŠ¨æ•°ç»„ + åŠ¨æ€è§„åˆ’
     int uniquePaths(int m, int n) {
         vector<int> dp(n, 1);
         for (int i = 1; i < m; i++) {

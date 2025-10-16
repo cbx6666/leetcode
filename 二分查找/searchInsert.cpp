@@ -1,6 +1,6 @@
-/*ËÑË÷²åÈëÎ»ÖÃ*/
-//¸ø¶¨Ò»¸öÅÅÐòÊý×éºÍÒ»¸öÄ¿±êÖµ£¬ÔÚÊý×éÖÐÕÒµ½Ä¿±êÖµ£¬²¢·µ»ØÆäË÷Òý¡£Èç¹ûÄ¿±êÖµ²»´æÔÚÓÚÊý×éÖÐ£¬·µ»ØËü½«»á±»°´Ë³Ðò²åÈëµÄÎ»ÖÃ¡£
-//Çë±ØÐëÊ¹ÓÃÊ±¼ä¸´ÔÓ¶ÈÎª O(log n) µÄËã·¨¡£
+/*æœç´¢æ’å…¥ä½ç½®*/
+//ç»™å®šä¸€ä¸ªæŽ’åºæ•°ç»„å’Œä¸€ä¸ªç›®æ ‡å€¼ï¼Œåœ¨æ•°ç»„ä¸­æ‰¾åˆ°ç›®æ ‡å€¼ï¼Œå¹¶è¿”å›žå…¶ç´¢å¼•ã€‚å¦‚æžœç›®æ ‡å€¼ä¸å­˜åœ¨äºŽæ•°ç»„ä¸­ï¼Œè¿”å›žå®ƒå°†ä¼šè¢«æŒ‰é¡ºåºæ’å…¥çš„ä½ç½®ã€‚
+//è¯·å¿…é¡»ä½¿ç”¨æ—¶é—´å¤æ‚åº¦ä¸º O(log n) çš„ç®—æ³•ã€‚
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
@@ -11,8 +11,8 @@ public:
         int n = nums.size();
         int middle = (start + end) / 2;
 
-        if (start > end) { // ÔÚ¶þ·Ö²éÕÒÖÐ£¬µ± start > end Ê±£¬±íÊ¾ËÑË÷Çø¼äÒÑ¾­ÎÞÐ§£¨Çø¼äÎª¿Õ£©£¬´ËÊ±¿ÉÒÔÈ·¶¨ target ²»´æÔÚÓÚÊý×éÖÐ¡£
-            return start; // µ«´ËÊ± start µÄÖµÒþÊ½µØÖ¸ÏòÁË target Ó¦¸Ã²åÈëµÄÎ»ÖÃ£¬Ê¹µÃ²åÈëºóÊý×éÈÔÈ»ÓÐÐò(¿ÉÒÔÊýÑ§Ö¤Ã÷)¡£
+        if (start > end) { // åœ¨äºŒåˆ†æŸ¥æ‰¾ä¸­ï¼Œå½“ start > end æ—¶ï¼Œè¡¨ç¤ºæœç´¢åŒºé—´å·²ç»æ— æ•ˆï¼ˆåŒºé—´ä¸ºç©ºï¼‰ï¼Œæ­¤æ—¶å¯ä»¥ç¡®å®š target ä¸å­˜åœ¨äºŽæ•°ç»„ä¸­ã€‚
+            return start; // ä½†æ­¤æ—¶ start çš„å€¼éšå¼åœ°æŒ‡å‘äº† target åº”è¯¥æ’å…¥çš„ä½ç½®ï¼Œä½¿å¾—æ’å…¥åŽæ•°ç»„ä»ç„¶æœ‰åº(å¯ä»¥æ•°å­¦è¯æ˜Ž)ã€‚
         }
 
         if (target > nums[middle]) {

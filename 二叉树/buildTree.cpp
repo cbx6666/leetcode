@@ -1,5 +1,5 @@
-/*´ÓÏÈĞòÓëÖĞĞò±éÀúĞòÁĞ¹¹Ôì¶ş²æÊ÷*/
-//¸ø¶¨Á½¸öÕûÊıÊı×é preorder ºÍ inorder £¬ÆäÖĞ preorder ÊÇ¶ş²æÊ÷µÄÏÈĞò±éÀú£¬ inorder ÊÇÍ¬Ò»¿ÃÊ÷µÄÖĞĞò±éÀú£¬Çë¹¹Ôì¶ş²æÊ÷²¢·µ»ØÆä¸ù½Úµã¡£
+/*ä»å‰åºä¸ä¸­åºéå†åºåˆ—æ„é€ äºŒå‰æ ‘*/
+// ç»™å®šä¸€æ£µäºŒå‰æ ‘çš„ preorder å’Œ inorder éå†ï¼Œpreorder æ˜¯æ ¹-å·¦-å³ï¼Œä¸­åº inorder æ˜¯å·¦-æ ¹-å³ï¼Œé‡å»ºè¯¥äºŒå‰æ ‘å¹¶è¿”å›æ ¹èŠ‚ç‚¹ã€‚
 class Solution {
 public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
@@ -12,20 +12,20 @@ public:
             return nullptr;
         }
 
-        TreeNode* root = new TreeNode(preorder[0]); // ÏÈĞò±éÀúµÄµÚÒ»¸öÔªËØÎª¸ù½Úµã
+        TreeNode* root = new TreeNode(preorder[0]); // å‰åºéå†çš„ç¬¬ä¸€ä¸ªå…ƒç´ ä¸ºæ ¹èŠ‚ç‚¹
         int index = 0;
         while (index < n && inorder[index] != preorder[0]) {
             index++;
         }
-        vector<int> inorder_left(inorder.begin(), inorder.begin() + index); // Í¨¹ı¸ù½Úµã·Ö³ö×ó×ÓÊ÷ºÍÓÒ×ÓÊ÷µÄÏÈĞò±éÀúºÍÖĞĞò±éÀú
+        vector<int> inorder_left(inorder.begin(), inorder.begin() + index); // æŒ‰æ ¹ä½ç½®åˆ’åˆ†ä¸­åºä¸ºå·¦ã€å³å­æ ‘
         vector<int> inorder_right(inorder.begin() + index + 1, inorder.end());
 
         int left_size = inorder_left.size();
         vector<int> preorder_left(preorder.begin() + 1, preorder.begin() + 1 + left_size);
         vector<int> preorder_right(preorder.begin() + 1 + left_size, preorder.end());
 
-        root->left = build(preorder_left, inorder_left); // µİ¹é×ó×ÓÊ÷
-        root->right = build(preorder_right, inorder_right); // µİ¹éÓÒ×ÓÊ÷
+        root->left = build(preorder_left, inorder_left); // é€’å½’æ„å»ºå·¦å­æ ‘
+        root->right = build(preorder_right, inorder_right); // é€’å½’æ„å»ºå³å­æ ‘
 
         return root;
     }

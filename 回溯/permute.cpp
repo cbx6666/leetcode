@@ -1,5 +1,5 @@
-/*È«ÅÅÁĞ*/
-//¸ø¶¨Ò»¸ö²»º¬ÖØ¸´Êı×ÖµÄÊı×é nums £¬·µ»ØÆä ËùÓĞ¿ÉÄÜµÄÈ«ÅÅÁĞ ¡£Äã¿ÉÒÔ °´ÈÎÒâË³Ğò ·µ»Ø´ğ°¸¡£
+/*å…¨æ’åˆ—*/
+//ç»™å®šä¸€ä¸ªä¸å«é‡å¤æ•°å­—çš„æ•°ç»„ nums ï¼Œè¿”å›å…¶ æ‰€æœ‰å¯èƒ½çš„å…¨æ’åˆ— ã€‚ä½ å¯ä»¥ æŒ‰ä»»æ„é¡ºåº è¿”å›ç­”æ¡ˆã€‚
 class Solution {
 public:
     vector<vector<int>> ans;
@@ -12,20 +12,20 @@ public:
 
     void backtrack(vector<int>& nums, vector<int>& answer) { 
         int n = nums.size();
-        // ÖÕÖ¹Ìõ¼ş£ºµ±Ã»ÓĞÊı×Ö¿ÉÑ¡Ê±
+        // ç»ˆæ­¢æ¡ä»¶ï¼šå½“æ²¡æœ‰æ•°å­—å¯é€‰æ—¶
         if (n == 0) {
-            ans.push_back(answer); // ½«µ±Ç°ÍêÕûÅÅÁĞ¼ÓÈë½á¹û¼¯
+            ans.push_back(answer); // å°†å½“å‰å®Œæ•´æ’åˆ—åŠ å…¥ç»“æœé›†
         }
 
-        for (int i = 0; i < n; i++) {  // ±éÀúËùÓĞ¿ÉÑ¡Êı×Ö
+        for (int i = 0; i < n; i++) {  // éå†æ‰€æœ‰å¯é€‰æ•°å­—
             int temp = nums[i];
-            nums.erase(nums.begin() + i); // ´Ó¿ÉÑ¡Êı×ÖÖĞÒÆ³ıµ±Ç°Êı×Ö
-            answer.push_back(temp);  // ½«µ±Ç°Êı×Ö¼ÓÈëÅÅÁĞ
+            nums.erase(nums.begin() + i); // ä»å¯é€‰æ•°å­—ä¸­ç§»é™¤å½“å‰æ•°å­—
+            answer.push_back(temp);  // å°†å½“å‰æ•°å­—åŠ å…¥æ’åˆ—
 
-            backtrack(nums, answer); // µİ¹é´¦ÀíÊ£ÓàÊı×Ö
+            backtrack(nums, answer); // é€’å½’å¤„ç†å‰©ä½™æ•°å­—
 
-            nums.insert(nums.begin() + i, temp); // ½«Êı×Ö·Å»ØÔ­Î»ÖÃ
-            answer.pop_back(); // ´ÓÅÅÁĞÖĞÒÆ³ıµ±Ç°Êı×Ö
+            nums.insert(nums.begin() + i, temp); // å°†æ•°å­—æ”¾å›åŸä½ç½®
+            answer.pop_back(); // ä»æ’åˆ—ä¸­ç§»é™¤å½“å‰æ•°å­—
         }
     }
 };

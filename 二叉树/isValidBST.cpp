@@ -1,4 +1,4 @@
-/*ÑéÖ¤ËÑË÷¶þ²æÊ÷*/
+/*éªŒè¯äºŒå‰æœç´¢æ ‘*/
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
@@ -9,7 +9,7 @@ public:
         if (root == nullptr) {
             return true;
         }
-        if (root->val >= max || root->val <= min) { // ÎªÒ¶½ÚµãÉèÖÃÇø¼ä£¬Îª×óº¢×ÓÉèÖÃ×î´óÖµ£¬ÎªÓÒº¢×ÓÉèÖÃ×îÐ¡Öµ
+        if (root->val >= max || root->val <= min) { // è¶…å‡ºå½“å‰å…è®¸çš„åŒºé—´èŒƒå›´
             return false;
         }
 

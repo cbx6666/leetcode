@@ -1,8 +1,8 @@
-/*ËÑË÷¶şÎ¬Êı×é*/
-//¸øÄãÒ»¸öÂú×ãÏÂÊöÁ½ÌõÊôĞÔµÄ m x n ÕûÊı¾ØÕó£º
-//Ã¿ĞĞÖĞµÄÕûÊı´Ó×óµ½ÓÒ°´·ÇÑÏ¸ñµİÔöË³ĞòÅÅÁĞ¡£
-//Ã¿ĞĞµÄµÚÒ»¸öÕûÊı´óÓÚÇ°Ò»ĞĞµÄ×îºóÒ»¸öÕûÊı¡£
-//¸øÄãÒ»¸öÕûÊı target £¬Èç¹û target ÔÚ¾ØÕóÖĞ£¬·µ»Ø true £»·ñÔò£¬·µ»Ø false ¡£
+/*æœç´¢äºŒç»´æ•°ç»„*/
+//ç»™ä½ ä¸€ä¸ªæ»¡è¶³ä¸‹è¿°ä¸¤æ¡å±æ€§çš„ m x n æ•´æ•°çŸ©é˜µï¼š
+//æ¯è¡Œä¸­çš„æ•´æ•°ä»å·¦åˆ°å³æŒ‰éä¸¥æ ¼é€’å¢é¡ºåºæ’åˆ—ã€‚
+//æ¯è¡Œçš„ç¬¬ä¸€ä¸ªæ•´æ•°å¤§äºå‰ä¸€è¡Œçš„æœ€åä¸€ä¸ªæ•´æ•°ã€‚
+//ç»™ä½ ä¸€ä¸ªæ•´æ•° target ï¼Œå¦‚æœ target åœ¨çŸ©é˜µä¸­ï¼Œè¿”å› true ï¼›å¦åˆ™ï¼Œè¿”å› false ã€‚
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
@@ -19,7 +19,7 @@ public:
         return search(matrix[row], 0, matrix[row].size() - 1, target);
     }
 
-    int confirmRow(vector<int>& nums, int begin, int end, int target) { // ÓÃ¶ş·Ö²éÕÒÈ·¶¨ĞĞ
+    int confirmRow(vector<int>& nums, int begin, int end, int target) { // ç”¨äºŒåˆ†æŸ¥æ‰¾ç¡®å®šè¡Œ
         if (begin > end) {
             return -1;
         }
@@ -41,7 +41,7 @@ public:
         }
     }
 
-    bool search(vector<int>& nums, int begin, int end, int target) { // ÔÚÒ»ĞĞÖĞ¶ş·Ö²éÕÒ
+    bool search(vector<int>& nums, int begin, int end, int target) { // åœ¨ä¸€è¡Œä¸­äºŒåˆ†æŸ¥æ‰¾
         if (begin > end) {
             return false;
         }

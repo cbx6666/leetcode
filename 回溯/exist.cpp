@@ -1,15 +1,15 @@
-/*µ¥´ÊËÑË÷*/
-//¸ø¶¨Ò»¸ö m x n ¶şÎ¬×Ö·ûÍø¸ñ board ºÍÒ»¸ö×Ö·û´®µ¥´Ê word ¡£Èç¹û word ´æÔÚÓÚÍø¸ñÖĞ£¬·µ»Ø true £»·ñÔò£¬·µ»Ø false ¡£
-//µ¥´Ê±ØĞë°´ÕÕ×ÖÄ¸Ë³Ğò£¬Í¨¹ıÏàÁÚµÄµ¥Ôª¸ñÄÚµÄ×ÖÄ¸¹¹³É£¬ÆäÖĞ¡°ÏàÁÚ¡±µ¥Ôª¸ñÊÇÄÇĞ©Ë®Æ½ÏàÁÚ»ò´¹Ö±ÏàÁÚµÄµ¥Ôª¸ñ¡£Í¬Ò»¸öµ¥Ôª¸ñÄÚµÄ×ÖÄ¸²»ÔÊĞí±»ÖØ¸´Ê¹ÓÃ¡£
+/*å•è¯æœç´¢*/
+//ç»™å®šä¸€ä¸ª m x n äºŒç»´å­—ç¬¦ç½‘æ ¼ board å’Œä¸€ä¸ªå­—ç¬¦ä¸²å•è¯ word ã€‚å¦‚æœ word å­˜åœ¨äºç½‘æ ¼ä¸­ï¼Œè¿”å› true ï¼›å¦åˆ™ï¼Œè¿”å› false ã€‚
+//å•è¯å¿…é¡»æŒ‰ç…§å­—æ¯é¡ºåºï¼Œé€šè¿‡ç›¸é‚»çš„å•å…ƒæ ¼å†…çš„å­—æ¯æ„æˆï¼Œå…¶ä¸­â€œç›¸é‚»â€å•å…ƒæ ¼æ˜¯é‚£äº›æ°´å¹³ç›¸é‚»æˆ–å‚ç›´ç›¸é‚»çš„å•å…ƒæ ¼ã€‚åŒä¸€ä¸ªå•å…ƒæ ¼å†…çš„å­—æ¯ä¸å…è®¸è¢«é‡å¤ä½¿ç”¨ã€‚
 class Solution {
 public:
-    vector<vector<bool>> visited; // ¼ÇÂ¼µ¥Ôª¸ñÊÇ·ñ±»·ÃÎÊ¹ı£¬±ÜÃâÖØ¸´Ê¹ÓÃ
+    vector<vector<bool>> visited; // è®°å½•å•å…ƒæ ¼æ˜¯å¦è¢«è®¿é—®è¿‡ï¼Œé¿å…é‡å¤ä½¿ç”¨
 
     bool exist(vector<vector<char>>& board, string word) {
         int rows = board.size(), cols = board[0].size();
         visited = vector<vector<bool>>(rows, vector<bool>(cols, false));
 
-        // ±éÀúËùÓĞµ¥Ôª¸ñ×÷ÎªÆğµã³¢ÊÔÆ¥Åä
+        // éå†æ‰€æœ‰å•å…ƒæ ¼ä½œä¸ºèµ·ç‚¹å°è¯•åŒ¹é…
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 if (backtrack(board, word, 0, i, j)) {
@@ -22,10 +22,10 @@ public:
 
     bool backtrack(vector<vector<char>>& board, const string& word, int index, int row, int col) {
         if (index == word.size()) {
-            return true;  // ÍêÈ«Æ¥Åä
+            return true;  // å®Œå…¨åŒ¹é…
         }
 
-        // ±ß½ç¼ì²é + ·ÃÎÊ±ê¼Ç¼ì²é + ×Ö·ûÆ¥Åä¼ì²é
+        // è¾¹ç•Œæ£€æŸ¥ + è®¿é—®æ ‡è®°æ£€æŸ¥ + å­—ç¬¦åŒ¹é…æ£€æŸ¥
         int rows = board.size(), cols = board[0].size();
         if (row < 0 || row >= rows || col < 0 || col >= cols || visited[row][col] || board[row][col] != word[index]) {
             return false;
@@ -33,13 +33,13 @@ public:
 
         visited[row][col] = true;
 
-        // ÏòËÄ¸ö·½Ïòµİ¹éËÑË÷£¨ÉÏ¡¢ÏÂ¡¢×ó¡¢ÓÒ£©
+        // å‘å››ä¸ªæ–¹å‘é€’å½’æœç´¢ï¼ˆä¸Šã€ä¸‹ã€å·¦ã€å³ï¼‰
         bool found = backtrack(board, word, index + 1, row - 1, col) ||
             backtrack(board, word, index + 1, row + 1, col) ||
             backtrack(board, word, index + 1, row, col - 1) ||
             backtrack(board, word, index + 1, row, col + 1);
 
-        visited[row][col] = false;  // »ØËİ
+        visited[row][col] = false;  // å›æº¯
 
         return found;
     }

@@ -1,19 +1,19 @@
-/*ºÃ×ÓÊı×éµÄ×î´ó·ÖÊı*/
-//¸øÄãÒ»¸öÕûÊıÊı×é nums £¨ÏÂ±ê´Ó 0 ¿ªÊ¼£©ºÍÒ»¸öÕûÊı k ¡£
-//Ò»¸ö×ÓÊı×é(i, j) µÄ ·ÖÊı ¶¨ÒåÎª min(nums[i], nums[i + 1], ..., nums[j])* (j - i + 1) ¡£Ò»¸ö ºÃ×ÓÊı×éµÄÁ½¸ö¶ËµãÏÂ±êĞèÒªÂú×ã i <= k <= j ¡£
-//ÇëÄã·µ»ØºÃ×ÓÊı×éµÄ×î´ó¿ÉÄÜ·ÖÊı ¡£
+/*å¥½å­æ•°ç»„çš„æœ€å¤§åˆ†æ•°*/
+//ç»™ä½ ä¸€ä¸ªæ•´æ•°æ•°ç»„ nums ï¼ˆä¸‹æ ‡ä» 0 å¼€å§‹ï¼‰å’Œä¸€ä¸ªæ•´æ•° k ã€‚
+//ä¸€ä¸ªå­æ•°ç»„(i, j) çš„ åˆ†æ•° å®šä¹‰ä¸º min(nums[i], nums[i + 1], ..., nums[j])* (j - i + 1) ã€‚ä¸€ä¸ª å¥½å­æ•°ç»„çš„ä¸¤ä¸ªç«¯ç‚¹ä¸‹æ ‡éœ€è¦æ»¡è¶³ i <= k <= j ã€‚
+//è¯·ä½ è¿”å›å¥½å­æ•°ç»„çš„æœ€å¤§å¯èƒ½åˆ†æ•° ã€‚
 class Solution {
 public:
-    int maximumScore(vector<int>& nums, int k) { // Ë«Ö¸Õë·¨
+    int maximumScore(vector<int>& nums, int k) { // åŒæŒ‡é’ˆæ³•
         int n = nums.size();
         int leftMin = nums[k], rightMin = nums[k];
-        for (int i = k; i >= 0; i--) { // ´ÓkÏò×ó¼ÇÂ¼×îĞ¡Öµ
+        for (int i = k; i >= 0; i--) { // ä»kå‘å·¦è®°å½•æœ€å°å€¼
             if (nums[i] < leftMin) {
                 leftMin = nums[i];
             }
             nums[i] = leftMin;
         }
-        for (int i = k; i < n; i++) { // ´ÓkÏòÓÒ¼ÇÂ¼×îĞ¡Öµ
+        for (int i = k; i < n; i++) { // ä»kå‘å³è®°å½•æœ€å°å€¼
             if (nums[i] < rightMin) {
                 rightMin = nums[i];
             }
@@ -22,7 +22,7 @@ public:
 
         int left = 0, right = n - 1, maxVal = INT_MIN; 
         while (left <= right) {
-            int val = (right - left + 1) * min(nums[left], nums[right]); // ÓëÊ¢Ë®×î¶àµÄÈİÆ÷Ô­ÀíÏàÍ¬
+            int val = (right - left + 1) * min(nums[left], nums[right]); // ä¸ç››æ°´æœ€å¤šçš„å®¹å™¨åŸç†ç›¸åŒ
             maxVal = max(val, maxVal);
             if (left == k && right == k) {
                 break;
@@ -44,8 +44,8 @@ public:
         return maxVal;
     }
 
-    // ÁíÒ»ÖÖ·½·¨
-    // ×ö·¨ÓëÖù×´Í¼ÖĞµÄ×î´ó¾ØĞÎÍêÈ«ÏàÍ¬£¬Ö»ĞèÒªÌí¼ÓÒ»¸öÅĞ¶ÏÌõ¼ş
+    // å¦ä¸€ç§æ–¹æ³•
+    // åšæ³•ä¸æŸ±çŠ¶å›¾ä¸­çš„æœ€å¤§çŸ©å½¢å®Œå…¨ç›¸åŒï¼Œåªéœ€è¦æ·»åŠ ä¸€ä¸ªåˆ¤æ–­æ¡ä»¶
     /*for (int i = 0; i < n; i++) {
         if (left[i] < k && right[i] > k) {
             int area = (right[i] - left[i] - 1) * heights[i];

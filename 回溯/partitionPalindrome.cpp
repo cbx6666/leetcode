@@ -1,26 +1,26 @@
-/*·Ö¸î»ØÎÄ´®*/
-//¸øÄãÒ»¸ö×Ö·û´® s£¬ÇëÄã½« s ·Ö¸î³ÉÒ»Ğ© ×Ó´®£¬Ê¹Ã¿¸ö×Ó´®¶¼ÊÇ »ØÎÄ´® ¡£·µ»Ø s ËùÓĞ¿ÉÄÜµÄ·Ö¸î·½°¸¡£
+/*åˆ†å‰²å›æ–‡ä¸²*/
+//ç»™ä½ ä¸€ä¸ªå­—ç¬¦ä¸² sï¼Œè¯·ä½ å°† s åˆ†å‰²æˆä¸€äº› å­ä¸²ï¼Œä½¿æ¯ä¸ªå­ä¸²éƒ½æ˜¯ å›æ–‡ä¸² ã€‚è¿”å› s æ‰€æœ‰å¯èƒ½çš„åˆ†å‰²æ–¹æ¡ˆã€‚
 class Solution {
 public:
     vector<vector<string>> answer;
     vector<vector<bool>> dp;
 
     vector<vector<string>> partition(string s) {
-        preprocessPalindrome(s); // Ô¤´¦ÀíËùÓĞ¿ÉÄÜµÄ»ØÎÄ×Ó´®
+        preprocessPalindrome(s); // é¢„å¤„ç†æ‰€æœ‰å¯èƒ½çš„å›æ–‡å­ä¸²
         vector<string> sub;
         backTrace(s, 0, sub);
         return answer;
     }
 
-    // »ØËİº¯Êı£ºËÑË÷ËùÓĞÒÔstartÎªÆğµãµÄÓĞĞ§·Ö¸î·½°¸
+    // å›æº¯å‡½æ•°ï¼šæœç´¢æ‰€æœ‰ä»¥startä¸ºèµ·ç‚¹çš„æœ‰æ•ˆåˆ†å‰²æ–¹æ¡ˆ
     void backTrace(const string& s, int start, vector<string>& sub) {
-        // ÖÕÖ¹Ìõ¼ş£ºÒÑ´¦ÀíÍêÕû¸ö×Ö·û´®£¬½«µ±Ç°·Ö¸î·½°¸¼ÓÈë½á¹û¼¯
+        // ç»ˆæ­¢æ¡ä»¶ï¼šå·²å¤„ç†å®Œæ•´ä¸ªå­—ç¬¦ä¸²ï¼Œå°†å½“å‰åˆ†å‰²æ–¹æ¡ˆåŠ å…¥ç»“æœé›†
         if (start == s.size()) {
             answer.push_back(sub);
             return;
         }
         for (int i = start; i < s.size(); i++) {
-            if (dp[start][i]) { // Èç¹ûs[start...i]ÊÇ»ØÎÄ
+            if (dp[start][i]) { // å¦‚æœs[start...i]æ˜¯å›æ–‡
                 sub.push_back(s.substr(start, i - start + 1));
                 backTrace(s, i + 1, sub);
                 sub.pop_back();
@@ -28,16 +28,16 @@ public:
         }
     }
 
-    // ¶¯Ì¬¹æ»®·¨ÅĞ¶Ï»ØÎÄ´®
+    // åŠ¨æ€è§„åˆ’æ³•åˆ¤æ–­å›æ–‡ä¸²
     void preprocessPalindrome(const string& s) {
         int n = s.size();
         dp.resize(n, vector<bool>(n, false));
-        // ´ÓºóÏòÇ°Ìî³ädp±í£¨i´Ón-1µ½0£¬j´Óiµ½n-1£©
+        // ä»åå‘å‰å¡«å……dpè¡¨ï¼ˆiä»n-1åˆ°0ï¼Œjä»iåˆ°n-1ï¼‰
         for (int i = n - 1; i >= 0; i--) {
             for (int j = i; j < n; j++) {
-                // ×´Ì¬×ªÒÆ·½³Ì£º
-                // 1. Ê×Î²×Ö·û±ØĞëÏàµÈ
-                // 2. ÇÒ£¨×Ó´®³¤¶È<=2 »ò ÄÚ²¿×Ó´®s[i+1...j-1]ÊÇ»ØÎÄ£©
+                // çŠ¶æ€è½¬ç§»æ–¹ç¨‹ï¼š
+                // 1. é¦–å°¾å­—ç¬¦å¿…é¡»ç›¸ç­‰
+                // 2. ä¸”ï¼ˆå­ä¸²é•¿åº¦<=2 æˆ– å†…éƒ¨å­ä¸²s[i+1...j-1]æ˜¯å›æ–‡ï¼‰
                 if (s[i] == s[j] && (j - i <= 2 || dp[i + 1][j - 1])) {
                     dp[i][j] = true;
                 }

@@ -1,26 +1,26 @@
-/*Â·¾¶×ÜºÍ¢ó*/
-//¸ø¶¨Ò»¸ö¶ş²æÊ÷µÄ¸ù½Úµã root £¬ºÍÒ»¸öÕûÊı targetSum £¬Çó¸Ã¶ş²æÊ÷Àï½ÚµãÖµÖ®ºÍµÈÓÚ targetSum µÄ Â·¾¶ µÄÊıÄ¿¡£
-//Â·¾¶ ²»ĞèÒª´Ó¸ù½Úµã¿ªÊ¼£¬Ò²²»ĞèÒªÔÚÒ¶×Ó½Úµã½áÊø£¬µ«ÊÇÂ·¾¶·½Ïò±ØĞëÊÇÏòÏÂµÄ£¨Ö»ÄÜ´Ó¸¸½Úµãµ½×Ó½Úµã£©¡£
+/*è·¯å¾„æ€»å’Œ III*/
+// ç»™ä½ ä¸€ä¸ªäºŒå‰æ ‘çš„æ ¹èŠ‚ç‚¹ root å’Œä¸€ä¸ªæ•´æ•° targetSumï¼Œè¿”å›æ‰€æœ‰è·¯å¾„ä¸­èŠ‚ç‚¹å€¼ä¹‹å’Œç­‰äº targetSum çš„è·¯å¾„æ•°ç›®ã€‚
+// è·¯å¾„ ä¸éœ€è¦ä»æ ¹èŠ‚ç‚¹å¼€å§‹ï¼Œä¹Ÿä¸éœ€è¦åœ¨å¶å­èŠ‚ç‚¹ç»“æŸï¼Œä½†æ˜¯è·¯å¾„å¿…é¡»æ˜¯å‘ä¸‹çš„ï¼ˆåªèƒ½ä»çˆ¶èŠ‚ç‚¹åˆ°å­èŠ‚ç‚¹ï¼‰ã€‚
 class Solution {
 public:
     int pathSum(TreeNode* root, int targetSum) {
-        unordered_map<long long, int> pre; // Ç°×ººÍ
+        unordered_map<long long, int> pre; // å‰ç¼€å’Œ
         pre[0] = 1;
         return dfs(root, 0, pre, targetSum);
     }
 
-    int dfs(TreeNode* root, long long currentSum, unordered_map<long long, int>& pre, int targetSum) { // Éî¶ÈÓÅÏÈ±éÀú+»ØËİ·¨
+    int dfs(TreeNode* root, long long currentSum, unordered_map<long long, int>& pre, int targetSum) { // æ·±åº¦ä¼˜å…ˆæœç´¢ + å‰ç¼€å’Œ
         if (root == nullptr) {
             return 0;
         }
 
         currentSum += root->val;
-        int count = pre[currentSum - targetSum]; // ÓëºÍÎªKµÄ×Ó´®Ô­ÀíÏàÍ¬
+        int count = pre[currentSum - targetSum]; // å­æ•°ç»„å’Œä¸º K çš„åŸç†ç›¸åŒ
 
-        pre[currentSum]++; // ½«µ±Ç°½ÚµãµÄÇ°×ººÍĞ´Èë¹şÏ£±í
-        count += dfs(root->left, currentSum, pre, targetSum); // µİ¹é´¦Àí×óÓÒ×ÓÊ÷£¬ÀÛ¼ÓËüÃÇµÄÓĞĞ§Â·¾¶Êı
+        pre[currentSum]++; // å°†å½“å‰èŠ‚ç‚¹çš„å‰ç¼€å’Œå†™å…¥å“ˆå¸Œ
+        count += dfs(root->left, currentSum, pre, targetSum); // é€’å½’å¤„ç†å·¦å³å­æ ‘ï¼Œç´¯åŠ æœ‰æ•ˆè·¯å¾„æ•°
         count += dfs(root->right, currentSum, pre, targetSum);  
-        pre[currentSum]--; // »ØËİ£ºÀë¿ªµ±Ç°½ÚµãÇ°£¬´Ó¹şÏ£±íÖĞÒÆ³ıµ±Ç°Â·¾¶ºÍ£¬ÒòÎªÒª·µ»Ø¸¸½Úµã£¬µ±Ç°Â·¾¶ºÍ²»Ó¦¸ÃÓ°ÏìÆäËû·ÖÖ§µÄ¼ÆËã
+        pre[currentSum]--; // å›æº¯ï¼šç¦»å¼€å½“å‰èŠ‚ç‚¹ï¼Œä»å“ˆå¸Œä¸­ç§»é™¤å½“å‰è·¯å¾„å’Œï¼Œé¿å…å½±å“å…¶ä»–åˆ†æ”¯
 
         return count;
     }

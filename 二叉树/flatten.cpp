@@ -1,23 +1,23 @@
-/*½«¶þ²æÊ÷×ªÎªÁ´±í*/
-//¸øÄã¶þ²æÊ÷µÄ¸ù½áµã root £¬ÇëÄã½«ËüÕ¹¿ªÎªÒ»¸öµ¥Á´±í£º
-//Õ¹¿ªºóµÄµ¥Á´±íÓ¦¸ÃÍ¬ÑùÊ¹ÓÃ TreeNode £¬ÆäÖÐ right ×ÓÖ¸ÕëÖ¸ÏòÁ´±íÖÐÏÂÒ»¸ö½áµã£¬¶ø×ó×ÓÖ¸ÕëÊ¼ÖÕÎª null ¡£
-//Õ¹¿ªºóµÄµ¥Á´±íÓ¦¸ÃÓë¶þ²æÊ÷ ÏÈÐò±éÀú Ë³ÐòÏàÍ¬¡£
+/*äºŒå‰æ ‘å±•å¼€ä¸ºé“¾è¡¨*/
+// ç»™ä½ ä¸€æ£µäºŒå‰æ ‘çš„æ ¹èŠ‚ç‚¹ root ï¼Œè¯·ä½ å°†å®ƒå±•å¼€ä¸ºä¸€ä¸ªå•é“¾è¡¨ã€‚
+// å±•å¼€åŽçš„å•é“¾è¡¨åº”å½“ä½¿ç”¨ TreeNode çš„ right æŒ‡é’ˆæŒ‡å‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹ï¼Œleft æŒ‡é’ˆå§‹ç»ˆä¸º nullã€‚
+// å±•å¼€åŽçš„å•é“¾è¡¨åº”ä¸Žå…ˆåºéåŽ†é¡ºåºç›¸åŒã€‚
 class Solution {
 public:
     void flatten(TreeNode* root) {
         TreeNode* curr = root;
-        while (curr != nullptr) { // ¶ÔÓÚµ±Ç°½Úµã£¬Èç¹û´æÔÚ×ó×ÓÊ÷£¬Ôò×ó×ÓÊ÷×îÓÒ²àµÄ½ÚµãÊÇµ±Ç°½ÚµãÓÒ×ÓÊ÷µÄÇ°Çý½Úµã
+        while (curr != nullptr) { // è‹¥æœ‰å·¦å­æ ‘ï¼Œå°†å…¶æŽ¥åˆ°å³ä¾§ï¼Œå†æŠŠåŽŸå³å­æ ‘æŽ¥åˆ°å·¦å­æ ‘æœ€å³ä¾§
             if (curr->left != nullptr) {
                 TreeNode* next = curr->left;
                 TreeNode* pre = next;
-                while (pre->right != nullptr) { // ÕÒµ½×ó×ÓÊ÷×îÓÒ²àµÄ½Úµã£¬×÷ÎªÇ°Çý½Úµã
+                while (pre->right != nullptr) { // æ‰¾åˆ°å·¦å­æ ‘çš„æœ€å³èŠ‚ç‚¹ï¼Œä½œä¸ºå‰é©±
                     pre = pre->right;
                 }
-                pre->right = curr->right; // ½«µ±Ç°½ÚµãµÄÓÒ½Úµã×÷ÎªÇ°Çý½ÚµãµÄÓÒ½Úµã
-                curr->left = nullptr; // ½«×ó×ÓÊ÷ÒÆµ½ÓÒ×ÓÊ÷µÄÎ»ÖÃ
+                pre->right = curr->right; // å°†å½“å‰å³å­æ ‘æŽ¥åˆ°å‰é©±çš„å³ä¾§
+                curr->left = nullptr; // å·¦æŒ‡é’ˆç½®ç©º
                 curr->right = next;
             }
-            curr = curr->right; // µü´ú¸üÐÂµ±Ç°½Úµã
+            curr = curr->right; // ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
         }
     }
 };

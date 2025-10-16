@@ -1,16 +1,16 @@
-/*��״ͼ�е�������*/
-//���� n ���Ǹ�������������ʾ��״ͼ�и������ӵĸ߶ȡ�ÿ�����ӱ˴����ڣ��ҿ���Ϊ 1 ��
-//���ڸ���״ͼ�У��ܹ����ճ����ľ��ε���������
+/*柱状图中的最大矩形*/
+//给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
+//求在该柱状图中，能够勾勒出来的矩形的最大面积。
 class Solution {
 public:
-    int largestRectangleArea(vector<int>& heights) { // ����ÿ�����ӣ��ֱ��������Ѱ�Ҹ߶ȵ�������������
+    int largestRectangleArea(vector<int>& heights) { // 对于每个柱子，分别向左和右寻找高度低于自身的柱子
         int n = heights.size();
-        stack<int> leftStack, rightStack; // ����ջ����ջ����ջ�׵ݼ�
-        vector<int> left(n), right(n); // ����ÿ�����ӣ���/�Ҳ��������ı������������ӵ�λ��
+        stack<int> leftStack, rightStack; // 单调栈，从栈顶到栈底递减
+        vector<int> left(n), right(n); // 对于每个柱子，左/右侧距离最近的比自身矮的柱子的位置
 
         for (int i = 0; i < n; i++) {
             while (!leftStack.empty() &&
-                heights[leftStack.top()] >= heights[i]) { // �����������ߵ�����
+                heights[leftStack.top()] >= heights[i]) { // 弹出比自身高的柱子
                 leftStack.pop();
             }
             left[i] = leftStack.empty() ? -1 : leftStack.top();

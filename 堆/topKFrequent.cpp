@@ -1,38 +1,38 @@
-/*Ç°k¸ö¸ßÆµÔªËØ*/
-// ¸øÄãÒ»¸öÕûÊıÊı×é nums ºÍÒ»¸öÕûÊı k £¬ÇëÄã·µ»ØÆäÖĞ³öÏÖÆµÂÊÇ° k ¸ßµÄÔªËØ¡£Äã¿ÉÒÔ°´ ÈÎÒâË³Ğò ·µ»Ø´ğ°¸¡£
+/*å‰kä¸ªé«˜é¢‘å…ƒç´ */
+// ç»™ä½ ä¸€ä¸ªæ•´æ•°æ•°ç»„ nums å’Œä¸€ä¸ªæ•´æ•° k ï¼Œè¯·ä½ è¿”å›å…¶ä¸­å‡ºç°é¢‘ç‡å‰ k é«˜çš„å…ƒç´ ã€‚ä½ å¯ä»¥æŒ‰ ä»»æ„é¡ºåº è¿”å›ç­”æ¡ˆã€‚
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
-        // Í³¼ÆÃ¿¸öÊı×Ö³öÏÖµÄÆµÂÊ
+        // ç»Ÿè®¡æ¯ä¸ªæ•°å­—å‡ºç°çš„é¢‘ç‡
         unordered_map<int, int> mp;
         for (auto num : nums) {
             mp[num]++;
         }
 
-        // ´æ´¢(Êı×Ö,ÆµÂÊ)¶Ô
+        // å­˜å‚¨(æ•°å­—,é¢‘ç‡)å¯¹
         vector<pair<int, int>> elements;
         for (auto pair : mp) {
             elements.push_back({ pair.first, pair.second });
         }
 
-        // ¹¹½¨×î´ó¶Ñ
+        // æ„å»ºæœ€å¤§å †
         int size = elements.size();
         buildHeap(elements, size);
 
         vector<int> answer;
         for (int i = 0; i < k; i++) {
-            // Ã¿´ÎÈ¡¶Ñ¶¥ÔªËØ£¨µ±Ç°ÆµÂÊ×î¸ßµÄ£©
+            // æ¯æ¬¡å–å †é¡¶å…ƒç´ ï¼ˆå½“å‰é¢‘ç‡æœ€é«˜çš„ï¼‰
             answer.push_back(elements[0].first);
-            // ½«¶Ñ¶¥ÔªËØÓë×îºóÒ»¸öÔªËØ½»»»£¬²¢ËõĞ¡¶Ñ·¶Î§
+            // å°†å †é¡¶å…ƒç´ ä¸æœ€åä¸€ä¸ªå…ƒç´ äº¤æ¢ï¼Œå¹¶ç¼©å°å †èŒƒå›´
             elements[0] = elements[size-- - 1];
-            // µ÷Õû¶Ñ£¬Î¬³Ö×î´ó¶ÑĞÔÖÊ
+            // è°ƒæ•´å †ï¼Œç»´æŒæœ€å¤§å †æ€§è´¨
             heapifyDown(elements, 0, size);
         }
 
         return answer;
     }
 
-    // ¶Ñµ÷Õûº¯Êı£¨ÏÂ³Á²Ù×÷£©
+    // å †è°ƒæ•´å‡½æ•°ï¼ˆä¸‹æ²‰æ“ä½œï¼‰
     void heapifyDown(vector<pair<int, int>>& nums, int index, int heapSize) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
@@ -49,7 +49,7 @@ public:
         }
     }
 
-    // ½¨¶Ñº¯Êı
+    // å»ºå †å‡½æ•°
     void buildHeap(vector<pair<int, int>>& nums, int heapSize) {
         for (int i = heapSize / 2 - 1; i >= 0; i--) {
             heapifyDown(nums, i, heapSize);

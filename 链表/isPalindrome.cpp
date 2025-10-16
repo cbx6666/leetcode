@@ -1,12 +1,12 @@
-/*»ØÎÄÁ´±í*/
-//¸øÄãÒ»¸öµ¥Á´±íµÄÍ·½Úµã head £¬ÇëÄãÅÐ¶Ï¸ÃÁ´±íÊÇ·ñÎª»ØÎÄÁ´±í¡£Èç¹ûÊÇ£¬·µ»Ø true £»·ñÔò£¬·µ»Ø false ¡£
+/*å›žæ–‡é“¾è¡¨*/
+//ç»™ä½ ä¸€ä¸ªå•é“¾è¡¨çš„å¤´èŠ‚ç‚¹ head ï¼Œè¯·ä½ åˆ¤æ–­è¯¥é“¾è¡¨æ˜¯å¦ä¸ºå›žæ–‡é“¾è¡¨ã€‚å¦‚æžœæ˜¯ï¼Œè¿”å›ž true ï¼›å¦åˆ™ï¼Œè¿”å›ž false ã€‚
 class Solution {
 public:
-    bool isPalindrome(ListNode* head) { // ÀûÓÃ¿ìÂýÖ¸ÕëÈ·¶¨ÖÐ¼ä½Úµã£¬ÐèÒªÅÐ¶ÏÁ´±í½ÚµãÊýµÄÆæÅ¼
+    bool isPalindrome(ListNode* head) { // åˆ©ç”¨å¿«æ…¢æŒ‡é’ˆç¡®å®šä¸­é—´èŠ‚ç‚¹ï¼Œéœ€è¦åˆ¤æ–­é“¾è¡¨èŠ‚ç‚¹æ•°çš„å¥‡å¶
         ListNode* fast = head, * slow = head;
         while (fast) {
             fast = fast->next;
-            if (!fast) { // ÆæÊý
+            if (!fast) { // å¥‡æ•°
                 slow = slow->next;
                 break;
             }
@@ -15,9 +15,9 @@ public:
         }
         fast = head;
 
-        slow = reverseList(slow); // ·­×ªºó°ë²¿·ÖÁ´±í
+        slow = reverseList(slow); // ç¿»è½¬åŽåŠéƒ¨åˆ†é“¾è¡¨
         while (slow) {
-            if (slow->val != fast->val) { // ±È½ÏÇ°°ë²¿·ÖºÍºó°ë²¿·ÖµÄÃ¿¸ö½ÚµãÊÇ·ñÏàµÈ
+            if (slow->val != fast->val) { // æ¯”è¾ƒå‰åŠéƒ¨åˆ†å’ŒåŽåŠéƒ¨åˆ†çš„æ¯ä¸ªèŠ‚ç‚¹æ˜¯å¦ç›¸ç­‰
                 return false;
             }
             slow = slow->next;

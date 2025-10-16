@@ -1,5 +1,5 @@
-/*½«ÓÐÐòÊý×é×ª»»Îª¶þ²æËÑË÷Ê÷*/
-//¸øÄãÒ»¸öÕûÊýÊý×é nums £¬ÆäÖÐÔªËØÒÑ¾­°´ ÉýÐò ÅÅÁÐ£¬ÇëÄã½«Æä×ª»»ÎªÒ»¿Ã Æ½ºâ ¶þ²æËÑË÷Ê÷¡£
+/*å°†æœ‰åºæ•°ç»„è½¬æ¢ä¸ºäºŒå‰æœç´¢æ ‘*/
+// ç»™ä½ ä¸€ä¸ªæ•´æ•°æ•°ç»„ nums ï¼Œå…ƒç´ å·²ç»æŒ‰ å‡åº æŽ’åˆ—ï¼Œè¯·ä½ å°†å…¶è½¬æ¢ä¸ºä¸€æ£µ é«˜åº¦å¹³è¡¡ çš„äºŒå‰æœç´¢æ ‘ã€‚
 class Solution {
 public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {

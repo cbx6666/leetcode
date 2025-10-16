@@ -1,28 +1,27 @@
-/*¶þ²æÊ÷µÄ×î½ü¹«¹²×æÏÈ*/
-//¸ø¶¨Ò»¸ö¶þ²æÊ÷, ÕÒµ½¸ÃÊ÷ÖÐÁ½¸öÖ¸¶¨½ÚµãµÄ×î½ü¹«¹²×æÏÈ¡£
-//°Ù¶È°Ù¿ÆÖÐ×î½ü¹«¹²×æÏÈµÄ¶¨ÒåÎª£º¡°¶ÔÓÚÓÐ¸ùÊ÷ T µÄÁ½¸ö½Úµã p¡¢q£¬×î½ü¹«¹²×æÏÈ±íÊ¾ÎªÒ»¸ö½Úµã x£¬Âú×ã x ÊÇ p¡¢q µÄ×æÏÈÇÒ x µÄÉî¶È¾¡¿ÉÄÜ´ó£¨Ò»¸ö½ÚµãÒ²¿ÉÒÔÊÇËü×Ô¼ºµÄ×æÏÈ£©¡£
-class Sulotion {
+/*äºŒå‰æ ‘çš„æœ€è¿‘å…¬å…±ç¥–å…ˆ*/
+// ç»™å®šä¸€ä¸ªäºŒå‰æ ‘, æ‰¾åˆ°è¯¥æ ‘ä¸­ä¸¤ä¸ªæŒ‡å®šèŠ‚ç‚¹çš„æœ€è¿‘å…¬å…±ç¥–å…ˆã€‚
+// ç™¾åº¦ç™¾ç§‘å¯¹æœ€è¿‘å…¬å…±ç¥–å…ˆçš„å®šä¹‰ä¸ºï¼šå¯¹äºŽæœ‰æ ¹æ ‘ T çš„ä¸¤ä¸ªèŠ‚ç‚¹ pã€qï¼Œæœ€è¿‘å…¬å…±ç¥–å…ˆè¡¨ç¤ºä¸ºä¸€ä¸ªèŠ‚ç‚¹ xï¼Œ
+// æ»¡è¶³ x æ˜¯ pã€q çš„ç¥–å…ˆä¸” x çš„æ·±åº¦å°½å¯èƒ½å¤§ï¼ˆä¸€ä¸ªèŠ‚ç‚¹ä¹Ÿå¯ä»¥æ˜¯å®ƒè‡ªå·±çš„ç¥–å…ˆï¼‰ã€‚
+class Solution {
 public:
 	TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) { // dfs
-		if (root == nullptr || root == p || root == q) { // Èç¹ûµ±Ç°½ÚµãÊÇÄ¿±ê½Úµã£¬Ôòµ±Ç°½Úµã¿ÉÄÜÊÇLCA£¨×îµÍ¹«¹²×æÏÈ£©£¬Ö±½Ó·µ»Ø
+		if (root == nullptr || root == p || root == q) { // å‘½ä¸­ç›®æ ‡æˆ–ç©ºèŠ‚ç‚¹ï¼Œç›´æŽ¥è¿”å›ž
 			return root;
 		}
 
-		// µÝ¹é±éÀú×ó×ÓÊ÷£¬²éÕÒp»òq
+		// é€’å½’åœ¨å·¦å³å­æ ‘åˆ†åˆ«å¯»æ‰¾ pã€q
 		TreeNode* left = lowestCommonAncestor(root->left, p, q);
-		// µÝ¹é±éÀúÓÒ×ÓÊ÷£¬²éÕÒp»òq
+		// é€’å½’åœ¨å³å­æ ‘å¯»æ‰¾ pã€q
 		TreeNode* right = lowestCommonAncestor(root->right, p, q);
 
-		// Èç¹ûµ±Ç°½Úµã²»ÊÇÄ¿±ê½Úµã£¬ÔòÔÚ×Ó½áµãÖÐ²éÕÒ
-		// Èç¹û×ó×ÓÊ÷Ã»ÓÐÕÒµ½p»òq£¬ËµÃ÷pºÍq¶¼ÔÚÓÒ×ÓÊ÷ÖÐ£¬·µ»ØÓÒ×ÓÊ÷µÄ½á¹û
+		// å½“å‰èŠ‚ç‚¹ä¸æ˜¯ç›®æ ‡èŠ‚ç‚¹æ—¶ï¼Œæ£€æŸ¥å­æ ‘ç»“æžœ
+		// è‹¥å·¦å­æ ‘ä¸ºç©ºï¼ŒLCA åœ¨å³ä¾§ï¼›è‹¥å³å­æ ‘ä¸ºç©ºï¼ŒLCA åœ¨å·¦ä¾§ï¼›éƒ½ä¸ç©ºåˆ™å½“å‰å³ LCA
 		if (left==nullptr) {
 			return right;
 		}
-		// Èç¹ûÓÒ×ÓÊ÷Ã»ÓÐÕÒµ½p»òq£¬ËµÃ÷pºÍq¶¼ÔÚ×ó×ÓÊ÷ÖÐ£¬·µ»Ø×ó×ÓÊ÷µÄ½á¹û
 		if (right == nullptr) {
 			return left;
 		}
-		// Èç¹û×óÓÒ×ÓÊ÷¶¼ÕÒµ½ÁËp»òq£¬ËµÃ÷µ±Ç°½Úµãroot¾ÍÊÇLCA
 		return root;
 	}
 };

@@ -1,5 +1,5 @@
-/*À¨ºÅÉú³É*/
-//Êý×Ö n ´ú±íÉú³ÉÀ¨ºÅµÄ¶ÔÊý£¬ÇëÄãÉè¼ÆÒ»¸öº¯Êý£¬ÓÃÓÚÄÜ¹»Éú³ÉËùÓÐ¿ÉÄÜµÄ²¢ÇÒ ÓÐÐ§µÄ À¨ºÅ×éºÏ¡£
+/*æ‹¬å·ç”Ÿæˆ*/
+//æ•°å­— n ä»£è¡¨ç”Ÿæˆæ‹¬å·çš„å¯¹æ•°ï¼Œè¯·ä½ è®¾è®¡ä¸€ä¸ªå‡½æ•°ï¼Œç”¨äºŽèƒ½å¤Ÿç”Ÿæˆæ‰€æœ‰å¯èƒ½çš„å¹¶ä¸” æœ‰æ•ˆçš„ æ‹¬å·ç»„åˆã€‚
 class Solution {
 public:
     vector<string> answer;
@@ -13,12 +13,12 @@ public:
     }
 
     void backTrace(int n, string sub) {
-        // ÖÕÖ¹Ìõ¼þ£ºµ±×Ö·û´®³¤¶ÈµÈÓÚ 2n Ê±£¬ËµÃ÷ÒÑÉú³ÉÒ»¸öÓÐÐ§×éºÏ
+        // ç»ˆæ­¢æ¡ä»¶ï¼šå½“å­—ç¬¦ä¸²é•¿åº¦ç­‰äºŽ 2n æ—¶ï¼Œè¯´æ˜Žå·²ç”Ÿæˆä¸€ä¸ªæœ‰æ•ˆç»„åˆ
         if (sub.size() == 2 * n) {
             answer.push_back(sub);
             return;
         }
-        // Ñ¡ÔñÌí¼Ó×óÀ¨ºÅµÄÌõ¼þ£º×óÀ¨ºÅÊýÁ¿Î´´ïµ½ n
+        // é€‰æ‹©æ·»åŠ å·¦æ‹¬å·çš„æ¡ä»¶ï¼šå·¦æ‹¬å·æ•°é‡æœªè¾¾åˆ° n
         if (left_num < n) {
             sub.push_back('(');
             left_num++;
@@ -26,7 +26,7 @@ public:
             sub.pop_back();
             left_num--;
         }
-        // Ñ¡ÔñÌí¼ÓÓÒÀ¨ºÅµÄÌõ¼þ£ºÓÒÀ¨ºÅÊýÁ¿Ð¡ÓÚ×óÀ¨ºÅÊýÁ¿£¨±£Ö¤ÓÐÐ§ÐÔ£©
+        // é€‰æ‹©æ·»åŠ å³æ‹¬å·çš„æ¡ä»¶ï¼šå³æ‹¬å·æ•°é‡å°äºŽå·¦æ‹¬å·æ•°é‡ï¼ˆä¿è¯æœ‰æ•ˆæ€§ï¼‰
         if (right_num < left_num) {
             sub.push_back(')');
             right_num++;

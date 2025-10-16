@@ -1,4 +1,4 @@
-/*二叉搜索树中第K小的元素*/
+/*浜屽弶鎼滅储鏍戜腑绗琄灏忕殑鍏冪礌*/
 class Solution {
 public:
     int kthSmallest(TreeNode* root, int k) {

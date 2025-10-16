@@ -1,17 +1,17 @@
-/*Ã¿ÈÕÎÂ¶È*/
-//¸ø¶¨Ò»¸öÕûÊıÊı×é temperatures £¬±íÊ¾Ã¿ÌìµÄÎÂ¶È£¬·µ»ØÒ»¸öÊı×é answer £¬ÆäÖĞ answer[i] ÊÇÖ¸¶ÔÓÚµÚ i Ìì£¬ÏÂÒ»¸ö¸ü¸ßÎÂ¶È³öÏÖÔÚ¼¸Ììºó¡£Èç¹ûÆøÎÂÔÚÕâÖ®ºó¶¼²»»áÉı¸ß£¬ÇëÔÚ¸ÃÎ»ÖÃÓÃ 0 À´´úÌæ¡£
+/*æ¯æ—¥æ¸©åº¦*/
+//ç»™å®šä¸€ä¸ªæ•´æ•°æ•°ç»„ temperatures ï¼Œè¡¨ç¤ºæ¯å¤©çš„æ¸©åº¦ï¼Œè¿”å›ä¸€ä¸ªæ•°ç»„ answer ï¼Œå…¶ä¸­ answer[i] æ˜¯æŒ‡å¯¹äºç¬¬ i å¤©ï¼Œä¸‹ä¸€ä¸ªæ›´é«˜æ¸©åº¦å‡ºç°åœ¨å‡ å¤©åã€‚å¦‚æœæ°”æ¸©åœ¨è¿™ä¹‹åéƒ½ä¸ä¼šå‡é«˜ï¼Œè¯·åœ¨è¯¥ä½ç½®ç”¨ 0 æ¥ä»£æ›¿ã€‚
 class Solution {
 public:
-    vector<int> dailyTemperatures(vector<int>& temperatures) { // ÄæĞò±éÀúÊı×é£¬¹¹Ôìµ¥µ÷Õ»£¬Õ»¶¥ÔªËØ¼´ÎªÏÂÒ»´Î¸ü¸ßÎÂ¶È
+    vector<int> dailyTemperatures(vector<int>& temperatures) { // é€†åºéå†æ•°ç»„ï¼Œæ„é€ å•è°ƒæ ˆï¼Œæ ˆé¡¶å…ƒç´ å³ä¸ºä¸‹ä¸€æ¬¡æ›´é«˜æ¸©åº¦
         int n = temperatures.size();
         stack<int> st;
         vector<int> answer(n);
         for (int i = n - 1; i >= 0; i--) {
-            while (!st.empty() && temperatures[st.top()] <= temperatures[i]) { // ¹¹Ôìµ¥µ÷Õ»
+            while (!st.empty() && temperatures[st.top()] <= temperatures[i]) { // æ„é€ å•è°ƒæ ˆ
                 st.pop();
             }
             if (st.empty()) {
-                answer[i] = 0; // ÆøÎÂ²»»áÔÙÉı¸ß
+                answer[i] = 0; // æ°”æ¸©ä¸ä¼šå†å‡é«˜
             }
             else {
                 answer[i] = st.top() - i;

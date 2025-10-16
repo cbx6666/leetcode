@@ -1,17 +1,17 @@
-/*×îĞ¡¸²¸Ç×Ö´®*/
-//¸øÄãÒ»¸ö×Ö·û´® s ¡¢Ò»¸ö×Ö·û´® t ¡£·µ»Ø s ÖĞº­¸Ç t ËùÓĞ×Ö·ûµÄ×îĞ¡×Ó´®¡£Èç¹û s ÖĞ²»´æÔÚº­¸Ç t ËùÓĞ×Ö·ûµÄ×Ó´®£¬Ôò·µ»Ø¿Õ×Ö·û´® "" ¡£
+/*æœ€å°è¦†ç›–å­—ä¸²*/
+//ç»™ä½ ä¸€ä¸ªå­—ç¬¦ä¸² s ã€ä¸€ä¸ªå­—ç¬¦ä¸² t ã€‚è¿”å› s ä¸­æ¶µç›– t æ‰€æœ‰å­—ç¬¦çš„æœ€å°å­ä¸²ã€‚å¦‚æœ s ä¸­ä¸å­˜åœ¨æ¶µç›– t æ‰€æœ‰å­—ç¬¦çš„å­ä¸²ï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸² "" ã€‚
 class Solution {
 public:
     string minWindow(string s, string t) {
         int sSize = s.size(), tSize = t.size();
-        unordered_map<char, int> need; // ×é³ÉtµÄ×Ö·û¼°Æä¸öÊı
-        unordered_map<char, int> window; // ´°¿ÚÄÚµÄ×Ö·û¼°Æä¸öÊı
+        unordered_map<char, int> need; // ç»„æˆtçš„å­—ç¬¦åŠå…¶ä¸ªæ•°
+        unordered_map<char, int> window; // çª—å£å†…çš„å­—ç¬¦åŠå…¶ä¸ªæ•°
         for (char c : t) {
             need[c]++;
         }
 
         int left = 0, right = 0, length = INT_MAX, start = 0;
-        int valid = 0; // ¼ÇÂ¼´°¿ÚÖĞÂú×ã need Ìõ¼şµÄ×Ö·ûÖÖÀàÊı
+        int valid = 0; // è®°å½•çª—å£ä¸­æ»¡è¶³ need æ¡ä»¶çš„å­—ç¬¦ç§ç±»æ•°
 
         while (right < sSize) {
             if (need.find(s[right]) != need.end()) {
@@ -22,16 +22,16 @@ public:
             }
             right++;
 
-            while (valid == need.size()) { // ±íÊ¾¸²¸ÇÁË×Ö·û´®
+            while (valid == need.size()) { // è¡¨ç¤ºè¦†ç›–äº†å­—ç¬¦ä¸²
                 int currentLength = right - left;
                 if (currentLength < length) {
                     length = currentLength;
                     start = left;
                 }
                 
-                // ×óÒÆ×ó±ß½ç
+                // å·¦ç§»å·¦è¾¹ç•Œ
                 if (need.find(s[left]) != need.end()) {
-                    if (window[s[left]] == need[s[left]]) { // ÒÆ¶¯ºó²»ÔÙ¸²¸Ç×Ö·û´®t
+                    if (window[s[left]] == need[s[left]]) { // ç§»åŠ¨åä¸å†è¦†ç›–å­—ç¬¦ä¸²t
                         valid--;
                     }
                     window[s[left]]--;
